@@ -1,21 +1,19 @@
-import './intro.scss'
-import {init} from 'ityped';
-import {useEffect, useRef} from 'react'
+import "./intro.scss";
+import { init } from "ityped";
+import { useEffect, useRef } from "react";
 
 export default function Intro() {
-
   const textRef = useRef();
-  console.log(textRef)
 
-  useEffect(()=> {
-    init(textRef.current , {
+  useEffect(() => {
+    init(textRef.current, {
       showCursor: true,
       backDelay: 1500,
       backSpeed: 60,
-      strings: ["Web Developer", "Mobile Developer"]
-    })
+      strings: ["Web Developer", "Mobile Developer"],
+    });
+  }, []);
 
-  }, [])
   return (
     <div className="intro" id="intro">
       <div className="left">
@@ -27,12 +25,19 @@ export default function Intro() {
         <div className="wrapper">
           <h2>Hello, I'm</h2>
           <h1>Mostafa Jad</h1>
-          <h3>Full Stack <span ref={textRef}></span></h3>
+          <h3>
+            Full Stack <span ref={textRef}></span>
+          </h3>
+          <button>
+            <a className= 'cv' href='../../assets/cv.pdf' download="Mostafa Jad CV.pdf">
+              Download CV
+            </a>
+          </button>
         </div>
         <a href="#portfolio">
           <img src="assets/down.png" alt="" />
         </a>
       </div>
     </div>
-  )
+  );
 }
