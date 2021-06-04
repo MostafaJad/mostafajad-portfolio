@@ -1,6 +1,6 @@
 import "./intro.scss";
 import { init } from "ityped";
-import { useEffect, useRef } from "react";
+import React,{ useEffect, useRef, useState } from "react";
 
 export default function Intro() {
   const textRef = useRef();
@@ -13,6 +13,9 @@ export default function Intro() {
       strings: ["Web Developer", "Mobile Developer"],
     });
   }, []);
+
+
+
 
   return (
     <div className="intro" id="intro">
@@ -29,7 +32,7 @@ export default function Intro() {
             Full Stack <span ref={textRef}></span>
           </h3>
           <button>
-            <a className= 'cv' href='../../assets/cv.pdf' download="Mostafa Jad CV.pdf">
+          <a className= 'cv' href='https://mostafacvreactapp.s3.us-east-2.amazonaws.com/mostafajad.pdf' download="Mostafa Jad CV.pdf" target='_blank'>
               Download CV
             </a>
           </button>
